@@ -14,6 +14,8 @@ jobs:
         run: npm install @babel/eslint-parser --save-dev
       - name: install preset
         run: npm install @babel/preset-react --save-dev
+      - name: install jest
+        run: npm install eslint-plugin-jest --save-dev
       - name: Lint
         run: npm run lint
   test:
