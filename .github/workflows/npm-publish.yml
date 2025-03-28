@@ -9,9 +9,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: install lint
-        run: npm install eslint @eslint/js eslint-plugin-react --save-dev
-      - name: install prettier
-        run: npm install eslint-config-prettier --save-dev
+        run: npm install eslint@latest @eslint/js eslint-plugin-react eslint-config-prettier --save-dev
       - name: Lint code
         run: npm run lint
       - name: Test code
