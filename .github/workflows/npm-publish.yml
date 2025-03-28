@@ -9,7 +9,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Install Lint
-        run: npm install eslint --save-dev
+        run: npm install eslint-plugin-react @eslint/js --save-dev
       - name: Lint
         run: npm run lint
   test:
