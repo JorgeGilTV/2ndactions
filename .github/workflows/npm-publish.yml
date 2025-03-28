@@ -1,42 +1,18 @@
-name: Deployment Exercise 2
-on: push
+name: Events Demo 1
+on: ...
 jobs:
-  lint:
+  deploy:
     runs-on: ubuntu-latest
-    steps: 
-      - name: Get code
-        uses: actions/checkout@v3
-      - name: Install dependencies
-        run: npm ci
-      - name: Install Lint
-        run: npm install eslint-plugin-react @eslint/js --save-dev
-      - name: install babel
-        run: npm install @babel/eslint-parser --save-dev
-      - name: install preset
-        run: npm install @babel/preset-react --save-dev
-      - name: install jest
-        run: npm install eslint-plugin-jest --save-dev
-      - name: Lint
-        run: npm run lint
-  test:
-    needs: lint
-    runs-on: ubuntu-latest
-    steps: 
+    steps:
+      - name: Output event data
+        run: echo "${{ toJSON(github.event) }}"
       - name: Get code
         uses: actions/checkout@v3
       - name: Install dependencies
         run: npm ci
       - name: Test code
         run: npm run test
-  deploy:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get code
-        uses: actions/checkout@v3
-      - name: Install dependencies
-        run: npm ci
       - name: Build code
         run: npm run build
-      - name: Deploy code
+      - name: Deploy project
         run: echo "Deploying..."
