@@ -8,6 +8,8 @@ jobs:
         uses: actions/checkout@v3
       - name: Install dependencies
         run: npm ci
+      - name: install lint
+        run: npm install eslint @eslint/js eslint-plugin-react --save-dev
       - name: Lint code
         run: npm run lint
       - name: Test code
