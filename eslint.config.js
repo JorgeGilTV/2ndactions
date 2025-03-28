@@ -9,6 +9,9 @@ export default [
     ignores: ['node_modules', 'dist'],
   },
   {
+    plugins: {
+      react: react,
+    },
     rules: {
       'no-unused-vars': 'warn',
       'react/prop-types': 'off',
